@@ -17,11 +17,9 @@ def get_account_info(player):
     summId = player['id']
     tftDataList = tft_watcher.league.by_summoner(my_region, summId)
     tftAccountInfo = tftDataList[0]
-    del tftAccountInfo['leagueId'], tftAccountInfo['queueType'], tftAccountInfo['summonerId'], tftAccountInfo['summonerName'], tftAccountInfo['veteran'], tftAccountInfo['inactive'], tftAccountInfo['freshBlood'], tftAccountInfo['hotStreak']
     
-    return tftAccountInfo['tier'], tftAccountInfo['rank'], tftAccountInfo['leaguePoints'], 'LP', str(tftAccountInfo['wins']) + 'W', '-', str(tftAccountInfo['losses']) + 'L'
-    #print(tftAccountInfo['tier'], tftAccountInfo['rank'], tftAccountInfo['leaguePoints'], 'LP')
-    #print(str(tftAccountInfo['wins']) + 'W', '-', str(tftAccountInfo['losses']) + 'L')
+    print(tftAccountInfo['tier'], tftAccountInfo['rank'], tftAccountInfo['leaguePoints'], 'LP')
+    print(str(tftAccountInfo['wins']) + 'W', '-', str(tftAccountInfo['losses']) + 'L')
 
 def get_tft_match_history(player):
     puuid = player['puuid']
@@ -48,7 +46,7 @@ user = input("Enter Summoner Name:")
 player = tft_watcher.summoner.by_name(my_region, user)
 #player is dict containing id, accountId, puuid, name, profileIconId, revisionDate, and summonerLevel
 
-print(get_account_info(player))
-#get_tft_match_history(player)
+get_account_info(player)
+get_tft_match_history(player)
 
 
