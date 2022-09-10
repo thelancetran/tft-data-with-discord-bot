@@ -47,7 +47,7 @@ def get_tft_match_history(player):
 #%% Main
 tft_watcher = TftWatcher(get_API_key())
 bot = lightbulb.BotApp(token = get_discord_key(), 
-                       default_enabled_guilds=(548016279659872257))
+                       default_enabled_guilds=([insert discord server ID]))
 
 my_region = 'na1'
 
